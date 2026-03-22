@@ -130,16 +130,16 @@ class O3CGifMaker(tk.Tk):
         self._trim_frame = ttk.Frame(self, style="Card.TFrame", padding=PAD)
         self._trim_frame.pack(fill="x", padx=PAD, pady=4)
 
-        ttk.Label(self._trim_frame, text="✂  Trim  (MP4 only)", background=CARD, foreground=ACCENT).grid(row=0, column=0, columnspan=4, sticky="w")
+        ttk.Label(self._trim_frame, text="Trim  (MP4 only)", background=CARD, foreground=ACCENT).grid(row=0, column=0, columnspan=4, sticky="w")
 
-        ttk.Label(self._trim_frame, text="Start (s):", background=CARD).grid(row=1, column=0, sticky="w", pady=4)
+        ttk.Label(self._trim_frame, text="Start:", background=CARD).grid(row=1, column=0, sticky="w", pady=4)
         self._start_label = ttk.Label(self._trim_frame, text="0.0 s", background=CARD, foreground=ACCENT, width=7)
         self._start_label.grid(row=1, column=1, sticky="w")
         self._start_slider = ttk.Scale(self._trim_frame, from_=0, to=60, variable=self._start_s,
                                        orient="horizontal", length=260, command=self._on_start_slide)
         self._start_slider.grid(row=1, column=2, columnspan=2, padx=(6, 0))
 
-        ttk.Label(self._trim_frame, text="End (s):", background=CARD).grid(row=2, column=0, sticky="w", pady=4)
+        ttk.Label(self._trim_frame, text="End:", background=CARD).grid(row=2, column=0, sticky="w", pady=4)
         self._end_label = ttk.Label(self._trim_frame, text="5.0 s", background=CARD, foreground=ACCENT, width=7)
         self._end_label.grid(row=2, column=1, sticky="w")
         self._end_slider = ttk.Scale(self._trim_frame, from_=0, to=60, variable=self._end_s,
@@ -167,7 +167,7 @@ class O3CGifMaker(tk.Tk):
         pc = ttk.Frame(self, style="Card.TFrame", padding=PAD)
         pc.pack(fill="x", padx=PAD, pady=4)
 
-        ttk.Label(pc, text="👁  Preview  (160×80)", background=CARD, foreground=ACCENT).pack(anchor="w")
+        ttk.Label(pc, text="Preview  (160×80)", background=CARD, foreground=ACCENT).pack(anchor="w")
         self._preview_canvas = tk.Canvas(pc, width=TARGET_W, height=TARGET_H,
                                          bg="#11111b", highlightthickness=1, highlightbackground="#45475a")
         self._preview_canvas.pack(pady=(6, 0))
